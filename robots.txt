@@ -1,2 +1,4 @@
 User-agent: *
 Allow: /
+
+Sitemap: https://dark-node-labs.github.io/midnight-bites-h5/sitemap.xml
