@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dark-node-labs.github.io/midnight-bites-h5/sitemap.xml
+Sitemap: https://bitesizearcade.com/sitemap.xml
