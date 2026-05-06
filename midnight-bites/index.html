@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="Play Midnight Bites, a free online restaurant game where you tap food orders, serve snacks, and build combos in a fast street-food rush." />
+    <meta name="theme-color" content="#d95d39" />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="Midnight Bites - Free Online Restaurant Game | Bitesize Arcade" />
+    <meta property="og:description" content="Play Midnight Bites, a free online restaurant game where you tap food orders, serve snacks, and build combos." />
+    <meta property="og:site_name" content="Bitesize Arcade" />
+    <link rel="canonical" href="https://bitesizearcade.com/midnight-bites/" />
+    <meta property="og:url" content="https://bitesizearcade.com/midnight-bites/" />
+    <meta property="og:image" content="https://bitesizearcade.com/assets/social/share-cover.jpg" />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="720" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Midnight Bites - Free Online Restaurant Game | Bitesize Arcade" />
+    <meta name="twitter:description" content="Play Midnight Bites, a free online restaurant game where you tap food orders, serve snacks, and build combos." />
+    <meta name="twitter:image" content="https://bitesizearcade.com/assets/social/share-cover.jpg" />
+    <meta name="twitter:image:alt" content="Midnight Bites mobile street-food combo game" />
+    <title>Midnight Bites - Free Online Restaurant Game | Bitesize Arcade</title>
+    <link rel="icon" type="image/png" sizes="192x192" href="../assets/icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="../assets/icons/icon-192.png" />
+    <link rel="manifest" href="../manifest.webmanifest" />
+    <link rel="stylesheet" href="../styles.css?v=20260506arcade" />
+    <link rel="stylesheet" href="../site.css?v=20260506arcade" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "VideoGame",
+        "name": "Midnight Bites",
+        "url": "https://bitesizearcade.com/midnight-bites/",
+        "description": "A free online restaurant game where players tap food orders, serve snacks, and build combos in a fast street-food rush.",
+        "applicationCategory": "Game",
+        "gamePlatform": "Web browser",
+        "genre": ["Restaurant game", "Food game", "Time management game", "Arcade game"],
+        "operatingSystem": "Any",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Bitesize Arcade"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div id="loading-screen" class="loading-screen" role="status" aria-live="polite">
+      <div class="loading-card">
+        <p class="loading-kicker">Warming Up</p>
+        <h1>Midnight Bites</h1>
+        <div class="loading-bar" aria-hidden="true">
+          <span id="loading-progress"></span>
+        </div>
+        <p id="loading-text" class="loading-text">Preparing city menus and stall lights...</p>
+        <p class="age-tip">Age Notice: Recommended for ages 8 and up</p>
+      </div>
+    </div>
+
+    <section id="health-dialog" class="health-dialog" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="health-title">
+      <div class="health-card">
+        <p class="health-kicker">Healthy Play Notice</p>
+        <h2 id="health-title">Play responsibly and take regular breaks</h2>
+        <div class="age-notice" aria-label="Age notice">
+          <strong>Age Notice: 8+</strong>
+          <span>Recommended for ages 8 and up. Children should play with guidance from a parent or guardian.</span>
+        </div>
+        <p>This game is for casual entertainment. Protect your eyes, avoid long continuous sessions, and take breaks often.</p>
+        <div class="health-actions">
+          <button id="health-cancel-btn" class="health-secondary-btn" type="button">Maybe Later</button>
+          <button id="health-confirm-btn" type="button">I Understand, Start</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="share-fallback-dialog" class="share-fallback-dialog" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="share-fallback-title">
+      <div class="share-fallback-card">
+        <h2 id="share-fallback-title">Copy Result</h2>
+        <p>Your browser blocked automatic copy. Select the text below to copy it manually.</p>
+        <textarea id="share-fallback-text" readonly rows="4"></textarea>
+        <button id="share-fallback-close" type="button">Close</button>
+      </div>
+    </section>
+
+    <main id="app-shell" class="app-shell" data-ui-mode="menu">
+      <section class="stage-layout">
+        <div id="canvas-frame" class="canvas-frame">
+          <div class="canvas-hud" aria-label="Game tools">
+            <button id="retry-btn" class="hud-btn hud-btn-left" type="button">Restart</button>
+            <div class="hud-right">
+              <button id="audio-btn" class="hud-btn hud-btn-audio" type="button">Sound</button>
+              <button id="menu-btn" class="hud-btn hud-btn-menu" type="button">Cities</button>
+              <button id="pause-btn" class="hud-btn hud-btn-pause" type="button">Pause</button>
+            </div>
+          </div>
+
+          <section id="floating-audio-panel" class="floating-audio-panel audio-panel" aria-label="Sound settings">
+            <div class="audio-panel-head">
+              <h2>Sound Mixer</h2>
+              <span id="audio-state-pill" class="audio-state-pill">Locked</span>
+            </div>
+
+            <div class="audio-preset-group" aria-label="Sound presets">
+              <button id="preset-groove" class="preset-btn" type="button">Light Groove</button>
+              <button id="preset-market" class="preset-btn" type="button">Street Ambience</button>
+            </div>
+
+            <p id="audio-preset-hint" class="audio-preset-hint">
+              Current preset: Light Groove. Music leads while ambience stays tucked into the beat.
+            </p>
+
+            <div class="audio-control">
+              <div class="audio-control-head">
+                <label for="bgm-slider">BGM</label>
+                <span id="bgm-value">35%</span>
+              </div>
+              <div class="audio-control-row">
+                <input id="bgm-slider" type="range" min="0" max="100" value="35" />
+                <button id="bgm-toggle" class="mini-btn" type="button">On</button>
+              </div>
+            </div>
+
+            <div class="audio-control">
+              <div class="audio-control-head">
+                <label for="ambience-slider">Ambience</label>
+                <span id="ambience-value">55%</span>
+              </div>
+              <div class="audio-control-row">
+                <input id="ambience-slider" type="range" min="0" max="100" value="55" />
+                <button id="ambience-toggle" class="mini-btn" type="button">On</button>
+              </div>
+            </div>
+
+            <div class="audio-control">
+              <div class="audio-control-head">
+                <label for="sfx-slider">SFX</label>
+                <span id="sfx-value">82%</span>
+              </div>
+              <div class="audio-control-row">
+                <input id="sfx-slider" type="range" min="0" max="100" value="82" />
+                <button id="sfx-toggle" class="mini-btn" type="button">On</button>
+              </div>
+            </div>
+
+            <p id="audio-diagnostics" class="audio-diagnostics">
+              Audio unlocks after your first tap. Channel status will appear here.
+            </p>
+
+            <div class="audio-utility-row">
+              <button id="quit-btn" class="panel-utility-btn" type="button">Back to Cities</button>
+              <button id="share-btn" class="panel-utility-btn" type="button">Copy Result</button>
+            </div>
+
+            <button id="revive-btn" class="panel-utility-btn revive-utility-btn" type="button">Cooler Refill</button>
+          </section>
+
+          <canvas
+            id="game"
+            width="900"
+            height="1380"
+            aria-label="Midnight Bites game canvas"
+          ></canvas>
+        </div>
+
+        <aside class="side-stack">
+          <section id="hero-copy" class="hero-copy" data-scene="lanterns">
+            <div class="hero-city-head">
+              <p id="hero-city-pill" class="hero-city-pill">New York</p>
+              <p id="hero-scene-pill" class="hero-scene-pill">Neon Corner</p>
+            </div>
+            <p class="eyebrow">STREET FOOD · CITY FLAVORS · COMBO RUSH</p>
+            <h1>Midnight Bites</h1>
+            <p id="hero-market-line" class="hero-market-line">Food Truck Night · Snacks and sounds change with each city.</p>
+            <p id="hero-tagline" class="tagline">
+              Tap the snacks in the order shown at the top. Keep your combo alive, clear the rush, and travel through global street-food cities.
+            </p>
+            <div id="hero-ingredient-strip" class="hero-ingredient-strip"></div>
+          </section>
+
+          <section id="control-card" class="control-card" data-scene="lanterns">
+            <label for="province-select">Choose City</label>
+            <select id="province-select" aria-label="Choose city"></select>
+
+            <section id="city-preview-card" class="city-preview-card">
+              <div class="city-preview-head">
+                <div>
+                  <p id="city-preview-title" class="city-preview-title">New York · Food Truck Night</p>
+                  <p id="city-preview-subtitle" class="city-preview-subtitle">Each city changes the snack deck, visual skin, and sound theme.</p>
+                </div>
+                <span id="city-preview-scene" class="city-preview-scene">Neon Corner</span>
+              </div>
+              <div id="city-preview-items" class="city-preview-items"></div>
+            </section>
+
+            <div class="button-row">
+              <button id="start-btn" type="button">Start Rush</button>
+              <button id="menu-audio-btn" type="button">Sound</button>
+            </div>
+
+            <p id="status-line" class="status-line">Switch cities to change the snack deck, card art, and street ambience.</p>
+          </section>
+
+          <section class="side-panel">
+            <section class="panel-block">
+              <h2>How to Play</h2>
+              <p>Tap snacks in the top order sequence. Finish an order to move to the next one and build a higher combo.</p>
+              <p>Pick a city before the run. Once play starts, the screen focuses on the game and sound controls move into the corner.</p>
+            </section>
+
+            <section class="panel-block game-seo-block">
+              <h2>What is Midnight Bites?</h2>
+              <p>
+                Midnight Bites is a free online restaurant game from Bitesize Arcade. You serve street-food orders by tapping snacks in the correct sequence, keeping the rush moving, and building a higher combo score.
+              </p>
+            </section>
+
+            <section class="panel-block game-seo-block">
+              <h2>Why Play This Restaurant Game?</h2>
+              <p>
+                The game is built for short mobile sessions with quick restarts, simple tap controls, global food themes, and city-based snack decks. It fits players who enjoy food games, order-serving games, and light time management challenges.
+              </p>
+            </section>
+
+            <section class="panel-block game-seo-block">
+              <h2>Game Features</h2>
+              <p>
+                Play through global city themes, follow food-order sequences, use one-tap mobile controls, chase higher combo scores, and restart quickly whenever you want another rush.
+              </p>
+            </section>
+
+            <section class="panel-block game-seo-block">
+              <h2>Tips for Higher Combos</h2>
+              <p>
+                Read the order bar before tapping, clear each snack in sequence, and avoid breaking rhythm when the city theme changes. A steady pace usually beats rushing every tap.
+              </p>
+            </section>
+
+            <section class="panel-block game-seo-block">
+              <h2>Related Games and Categories</h2>
+              <p>
+                If you like Midnight Bites, explore more browser-friendly restaurant games, food games, and time management games on Bitesize Arcade.
+              </p>
+            </section>
+
+            <section class="panel-block">
+              <h2>City Board</h2>
+              <ol id="leaderboard" class="leaderboard"></ol>
+            </section>
+
+            <nav class="legal-links" aria-label="Site information">
+              <a href="../">Bitesize Arcade</a>
+              <a href="../restaurant-games/">Restaurant Games</a>
+              <a href="../food-games/">Food Games</a>
+              <a href="../docs/privacy.html">Privacy Policy</a>
+              <a href="../docs/terms.html">Terms</a>
+            </nav>
+          </section>
+        </aside>
+      </section>
+    </main>
+
+    <script src="../game.js?v=20260506arcade"></script>
+  </body>
+</html>

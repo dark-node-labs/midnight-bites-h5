@@ -1,8 +1,8 @@
 {
-  "name": "Midnight Bites",
-  "short_name": "Bites",
-  "description": "A mobile web game about street-food orders, global city flavors, and combo scoring.",
-  "start_url": "./",
+  "name": "Bitesize Arcade",
+  "short_name": "Bitesize",
+  "description": "Free online mini games, restaurant games, food games, and quick arcade games for mobile browsers.",
+  "start_url": "./midnight-bites/",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",

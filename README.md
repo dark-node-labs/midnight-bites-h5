@@ -1,6 +1,6 @@
-# Midnight Bites H5
+# Bitesize Arcade
 
-Midnight Bites is a mobile-first H5 game about street-food orders, global city flavors, and combo scoring. Players choose a city, tap snacks in the displayed order, and try to clear the full rush with a higher combo.
+Bitesize Arcade is a static mini-game website. The home page introduces the arcade brand, while Midnight Bites lives on its own optimized game page as a free online restaurant game.
 
 ## Local Preview
 
@@ -22,7 +22,7 @@ http://192.168.31.216:5173
 
 ## GitHub Pages Deployment
 
-1. Create a GitHub repository, for example `midnight-bites-h5`.
+1. Create or open the GitHub repository for the site.
 2. Initialize and push from this folder:
 
 ```bash
@@ -30,7 +30,7 @@ git init
 git add .
 git commit -m "Initial H5 release"
 git branch -M main
-git remote add origin git@github.com:YOUR_NAME/midnight-bites-h5.git
+git remote add origin git@github.com:YOUR_NAME/YOUR_REPO.git
 git push -u origin main
 ```
 
@@ -39,21 +39,19 @@ git push -u origin main
 5. Set Branch to `main` and Folder to `/root`.
 6. Save and wait for GitHub Pages to build.
 
-Default public URL:
+Production URL:
 
 ```text
-https://YOUR_NAME.github.io/midnight-bites-h5/
+https://bitesizearcade.com/
 ```
 
-After the first Pages deployment succeeds, replace the social and SEO URLs with the final public URL:
-
-- Add a canonical URL to `index.html`.
-- Change `og:image` and `twitter:image` to absolute HTTPS URLs.
-- Add a `sitemap.xml` with absolute URLs.
-- Add `Sitemap: https://YOUR_NAME.github.io/midnight-bites-h5/sitemap.xml` to `robots.txt`.
+The repository includes `CNAME`, `robots.txt`, and `sitemap.xml` configured for the custom domain.
 
 ## Launch Checklist
 
+- The home page presents Bitesize Arcade as the main site brand.
+- `/midnight-bites/` presents Midnight Bites as the optimized game page.
+- `/restaurant-games/`, `/food-games/`, and `/time-management-games/` provide category landing pages.
 - `index.html`, `styles.css`, and `game.js` use relative asset paths.
 - The mobile first screen shows the start button without requiring a scroll.
 - Food cards are large enough on 375px, 390px, and 414px mobile widths.
@@ -61,8 +59,8 @@ After the first Pages deployment succeeds, replace the social and SEO URLs with 
 - Audio starts only after a user gesture.
 - `assets/social/share-cover.jpg` is reachable as the social share image.
 - Privacy Policy and Terms pages are linked from the menu.
-- After GitHub Pages is live, `og:image`, `twitter:image`, `canonical`, `robots.txt`, and `sitemap.xml` use the final public URL.
-- Add the final public URL to Google Search Console after deployment.
+- `og:image`, `twitter:image`, `canonical`, `robots.txt`, and `sitemap.xml` use `https://bitesizearcade.com/`.
+- Add `https://bitesizearcade.com/` to Google Search Console after deployment.
 
 ## Project Structure
 
@@ -70,10 +68,15 @@ After the first Pages deployment succeeds, replace the social and SEO URLs with 
 assets/icons/        PWA and browser icons
 assets/social/       Social sharing image
 docs/                Privacy Policy and Terms
-index.html           H5 entry
+food-games/          Food games category page
+midnight-bites/      Midnight Bites playable game page
+restaurant-games/    Restaurant games category page
+time-management-games/ Time management games category page
+index.html           Bitesize Arcade home page
 styles.css           Page layout and mobile adaptation
 game.js              Canvas game logic
 manifest.webmanifest PWA configuration
 robots.txt           Search crawler configuration
-.nojekyll            GitHub Pages static publishing marker
+CNAME                GitHub Pages custom domain
+sitemap.xml          XML sitemap
 ```
