@@ -1,8 +1,8 @@
 {
   "name": "Bitesize Arcade",
   "short_name": "Bitesize",
-  "description": "Free online mini games, restaurant games, food games, and quick arcade games for mobile browsers.",
-  "start_url": "./midnight-bites/",
+  "description": "Free online mini games, match 3 games, food games, matching games, restaurant games, and quick arcade games for mobile browsers.",
+  "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "orientation": "portrait",

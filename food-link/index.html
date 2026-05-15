@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta
+      name="description"
+      content="Play Food Link free online at Bitesize Arcade. Match food tiles, clear pairs through open paths, use hints and shuffles, and beat each level in your browser."
+    />
+    <meta
+      name="keywords"
+      content="Food Link, food matching game, connect two game, tile matching game, free online matching games, no download browser games"
+    />
+    <meta name="theme-color" content="#d94f30" />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://bitesizearcade.com/food-link/" />
+    <meta property="og:title" content="Food Link - Play Free Online Food Matching Game" />
+    <meta property="og:description" content="Match food pairs through clear paths in a quick no-download browser puzzle game." />
+    <meta property="og:url" content="https://bitesizearcade.com/food-link/" />
+    <meta property="og:site_name" content="Bitesize Arcade" />
+    <meta property="og:image" content="https://bitesizearcade.com/assets/games/food-link/cover.png" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Food Link - Play Free Online Food Matching Game" />
+    <meta name="twitter:description" content="A quick connect-two food puzzle for mobile and desktop browsers." />
+    <meta name="twitter:image" content="https://bitesizearcade.com/assets/games/food-link/cover.png" />
+    <title>Food Link - Play Free Online Food Matching Game, No Download</title>
+    <link rel="icon" type="image/png" sizes="192x192" href="../assets/icons/icon-192.png" />
+    <link rel="apple-touch-icon" href="../assets/icons/icon-192.png" />
+    <link rel="stylesheet" href="./styles.css?v=20260514foodlink2" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W35TK7R6VX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-W35TK7R6VX");
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "VideoGame",
+        "name": "Food Link",
+        "url": "https://bitesizearcade.com/food-link/",
+        "description": "A free online food matching puzzle game where players connect identical food tiles through open paths, clear pairs, and advance through timed levels.",
+        "applicationCategory": "Game",
+        "gamePlatform": "Web browser",
+        "genre": ["Matching game", "Puzzle game", "Food game", "Arcade game"],
+        "operatingSystem": "Any",
+        "inLanguage": "en",
+        "isAccessibleForFree": true,
+        "publisher": {
+          "@type": "Organization",
+          "name": "Bitesize Arcade"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <header class="game-site-header">
+      <a class="game-site-logo" href="../" aria-label="Bitesize Arcade home">
+        <img src="../assets/icons/icon-192.png" alt="" />
+        <span>Bitesize Arcade</span>
+      </a>
+      <nav class="game-site-nav" aria-label="Primary navigation">
+        <a href="../games/">All Games</a>
+        <a href="../midnight-bites/">Midnight Bites</a>
+        <a href="../food-games/">Food Games</a>
+      </nav>
+    </header>
+
+    <main class="app-shell">
+      <section class="game-panel" aria-label="Food Link game">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Food Link</p>
+            <h1>Match the dishes</h1>
+          </div>
+          <div class="stats" aria-label="Game stats">
+            <span><strong id="level">1</strong><span id="level-name">Snack Start</span></span>
+            <span><strong id="score">0</strong> score</span>
+            <span><strong id="matches">0</strong><span id="pairs-label">/12 pairs</span></span>
+            <span><strong id="timer">04:00</strong></span>
+          </div>
+        </header>
+
+        <div class="toolbar" aria-label="Game controls">
+          <button id="new-game" type="button">New Game</button>
+          <button id="hint" type="button">Hint</button>
+          <button id="shuffle" type="button">Shuffle</button>
+          <button id="pause" type="button" aria-pressed="false">Pause</button>
+          <button id="music" type="button" aria-pressed="false">Music Off</button>
+          <button id="sfx" type="button" aria-pressed="true">SFX On</button>
+        </div>
+
+        <div class="board-wrap">
+          <svg id="path-layer" aria-hidden="true"></svg>
+          <div id="board" class="board" aria-label="Food matching board"></div>
+          <div id="overlay" class="overlay hidden">
+            <div>
+              <p id="overlay-title">You won!</p>
+              <button id="overlay-button" type="button">Play Again</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <section class="game-info" aria-label="About Food Link">
+      <div>
+        <p class="eyebrow">How to Play</p>
+        <h2>Connect matching food tiles before time runs out.</h2>
+      </div>
+      <p>
+        Pick two identical dishes that can be linked by a clear path with no more than two turns. Clear every pair to move to
+        the next level, use Hint when you are stuck, and Shuffle when the board needs a fresh route.
+      </p>
+    </section>
+
+    <footer class="game-site-footer">
+      <span>© 2026 Bitesize Arcade</span>
+      <a href="../about/">About</a>
+      <a href="../contact/">Contact</a>
+      <a href="../docs/privacy.html">Privacy Policy</a>
+      <a href="../docs/terms.html">Terms</a>
+    </footer>
+
+    <script src="./game.js?v=20260514foodlink2"></script>
+  </body>
+</html>
