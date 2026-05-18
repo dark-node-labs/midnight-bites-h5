@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="description" content="Play Toon Tone Game online for free. Study original cartoon-style characters, remember the hidden color, and match the toon tone with hue, saturation, and brightness sliders. No download required." />
+    <meta name="keywords" content="toon tone, toontone, toon-tone, toon tone game, tone tone game, toon toon game, toon color, toon tone color, color game, toon tone cartoon" />
+    <meta name="theme-color" content="#d95d39" />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://bitesizearcade.com/toon-tone-game/" />
+    <meta property="og:title" content="Toon Tone Game - Free Online Color Memory Game" />
+    <meta property="og:description" content="Match hidden toon colors from memory in this free online toon tone color game." />
+    <meta property="og:url" content="https://bitesizearcade.com/toon-tone-game/" />
+    <meta property="og:site_name" content="Bitesize Arcade" />
+    <meta property="og:image" content="https://bitesizearcade.com/assets/games/toon-tone-game/cover.svg" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Toon Tone Game - Free Online Color Memory Game" />
+    <meta name="twitter:description" content="Match hidden toon colors from memory in this free online toon color challenge." />
+    <meta name="twitter:image" content="https://bitesizearcade.com/assets/games/toon-tone-game/cover.svg" />
+    <title>Toon Tone Game - Free Online Color Memory Game</title>
+    <link rel="icon" type="image/png" sizes="192x192" href="../assets/icons/icon-192.png" />
+    <link rel="stylesheet" href="../styles.css?v=20260506arcade" />
+    <link rel="stylesheet" href="../site.css?v=20260514library" />
+    <link rel="stylesheet" href="./styles.css?v=20260518toon" />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W35TK7R6VX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag("js", new Date());
+      gtag("config", "G-W35TK7R6VX");
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "Toon Tone Game",
+        "description": "A free online toon color memory game where players match hidden cartoon-style colors from memory.",
+        "url": "https://bitesizearcade.com/toon-tone-game/",
+        "genre": ["Color Game", "Memory Game", "Puzzle Game"],
+        "playMode": "SinglePlayer",
+        "applicationCategory": "Game"
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is Toon Tone Game?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Toon Tone Game is a free online color memory game from Bitesize Arcade where players study original cartoon-style characters and match a hidden toon color from memory."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is Toon Tone Game free?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Toon Tone Game is free to play in a browser with no download required."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is this the same as ToonTone?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. This is an original toon color memory game from Bitesize Arcade. It uses original cartoon-style characters and does not use real cartoon, anime, game, or brand characters."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How do you play a toon tone color game?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Study the character, watch which part gets hidden, adjust hue, saturation, and brightness sliders, then lock your color to compare it with the actual shade."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I play Toon Tone Game on mobile?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. Toon Tone Game is mobile friendly and also works on desktop browsers."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Does Toon Tone Game use real cartoon characters?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. All characters are original SVG characters generated for the game."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How is the color score calculated?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Each guess is compared with the target shade using perceptual color distance. The closer your toon tone match, the higher your round score."
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body class="site-page toon-page">
+    <header class="site-header">
+      <a class="site-logo" href="../" aria-label="Bitesize Arcade home"><img src="../assets/icons/icon-192.png" alt="" /><span>Bitesize Arcade</span></a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="../games/">All Games</a>
+        <a href="../fruit-swap/">Fruit Swap</a>
+        <a href="../food-link/">Food Link</a>
+        <a href="../midnight-bites/">Midnight Bites</a>
+        <a href="../restaurant-games/">Restaurant Games</a>
+        <a href="../food-games/">Food Games</a>
+        <a href="../about/">About</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="toon-game-shell" aria-label="Toon Tone Game">
+        <div class="toon-play-panel">
+          <section class="toon-stage">
+            <div class="toon-stage-head">
+              <div class="toon-title-block">
+                <p class="site-kicker">Free Online Color Game</p>
+                <h1>Toon Tone Game</h1>
+                <p>Match the hidden toon color from memory.</p>
+              </div>
+              <div>
+                <span id="toon-round-pill" class="toon-pill">Round 1 / 5</span>
+                <span id="toon-timer" class="toon-timer">Daily</span>
+                <span id="toon-score" class="toon-score-pill">0 / 500</span>
+              </div>
+            </div>
+            <div id="toon-character" class="toon-character-card" aria-live="polite"></div>
+            <p id="toon-status" class="toon-status-line">Press Start to play today's fixed 5-round challenge.</p>
+          </section>
+
+          <aside class="toon-controls" aria-label="Color controls">
+            <h2 id="toon-control-title">Daily Challenge</h2>
+            <p id="toon-control-copy" class="toon-control-copy">
+              Toon Tone Game is a free online color memory game from Bitesize Arcade. Study an original cartoon-style character, remember the hidden color, then match the toon tone with hue, saturation, and brightness sliders.
+            </p>
+
+            <div class="toon-slider-group">
+              <div class="toon-slider-row">
+                <div class="toon-slider-head">
+                  <label for="toon-hue">Hue</label>
+                  <span id="toon-hue-value">180</span>
+                </div>
+                <input id="toon-hue" type="range" min="0" max="359" value="180" />
+              </div>
+              <div class="toon-slider-row">
+                <div class="toon-slider-head">
+                  <label for="toon-sat">Saturation</label>
+                  <span id="toon-sat-value">70%</span>
+                </div>
+                <input id="toon-sat" type="range" min="0" max="100" value="70" />
+              </div>
+              <div class="toon-slider-row">
+                <div class="toon-slider-head">
+                  <label for="toon-bright">Brightness</label>
+                  <span id="toon-bright-value">70%</span>
+                </div>
+                <input id="toon-bright" type="range" min="0" max="100" value="70" />
+              </div>
+            </div>
+
+            <div class="toon-preview-row" aria-label="Current color preview">
+              <div id="toon-preview" class="toon-color-preview"></div>
+              <div class="toon-preview-values">
+                <span>Current color</span>
+                <span id="toon-preview-values">H 180 · S 70% · B 70%</span>
+              </div>
+            </div>
+
+            <div class="toon-button-row">
+              <button id="toon-start-btn" type="button">Start</button>
+              <button id="toon-lock-btn" type="button" disabled>Lock Color</button>
+              <button id="toon-next-btn" class="secondary" type="button" disabled>Next</button>
+              <button id="toon-battle-btn" class="secondary" type="button">Battle Mode - Coming Soon</button>
+            </div>
+
+            <section id="toon-results" class="toon-results" hidden>
+              <h2>Result</h2>
+              <div class="toon-swatch-grid">
+                <div class="toon-swatch">
+                  <span>Your color</span>
+                  <span id="toon-guess-swatch"></span>
+                </div>
+                <div class="toon-swatch">
+                  <span>Actual color</span>
+                  <span id="toon-actual-swatch"></span>
+                </div>
+              </div>
+              <p id="toon-result-text" class="toon-control-copy"></p>
+              <ul id="toon-summary-list" class="toon-round-results"></ul>
+              <p id="toon-best-box" class="toon-best-box"></p>
+              <button id="toon-copy-btn" class="toon-copy-button" type="button" hidden>Copy Result</button>
+            </section>
+          </aside>
+        </div>
+
+        <section class="toon-seo-main">
+          <section class="site-section">
+            <h2>How to Play Toon Tone Game</h2>
+            <ul>
+              <li>Study the cartoon-style character before the timer ends.</li>
+              <li>Watch which part gets hidden.</li>
+              <li>Adjust hue, saturation, and brightness.</li>
+              <li>Lock your color.</li>
+              <li>Compare your guess with the actual shade and chase a higher score.</li>
+            </ul>
+          </section>
+
+          <section class="site-section">
+            <h2>What is Toon Tone Game?</h2>
+            <p>
+              Toon Tone Game is a toon tone color memory game from Bitesize Arcade. Each short round shows original cartoon-style characters, hides one important toon color, and asks you to rebuild that shade from memory. It is a no download browser game made for quick color matching sessions on phones and computers.
+            </p>
+          </section>
+
+          <section class="site-section">
+            <h2>Why Play This Toon Color Game?</h2>
+            <p>
+              This quick browser game is mobile friendly, built around short rounds, and focused on color matching instead of long setup. The memory challenge is simple to understand: look, remember, adjust, and see how close your toon color match can get.
+            </p>
+          </section>
+
+          <section class="site-section">
+            <h2>Tips for Matching Toon Tone Colors</h2>
+            <p>
+              Start with hue first because it decides whether the color feels red, yellow, green, blue, or purple. Then tune saturation if the shade looks too muted, and adjust brightness if your guess is too bright or too dark. If the match feels off, ask whether the target was warmer or cooler before moving the hue slider again.
+            </p>
+          </section>
+
+          <section class="site-section">
+            <h2>Free Online Color Game with No Download</h2>
+            <p>
+              Toon Tone Game is a free online color game that runs directly in your browser. You can play on mobile or desktop with no download, no account, and no external character images.
+            </p>
+          </section>
+
+          <section class="site-section faq-section">
+            <div class="section-head">
+              <p class="site-kicker">Quick Answers</p>
+              <h2>Toon Tone Game FAQ</h2>
+            </div>
+            <div class="faq-list">
+              <div>
+                <h3>What is Toon Tone Game?</h3>
+                <p>Toon Tone Game is a free online color memory game from Bitesize Arcade where you study original cartoon-style characters and match a hidden toon color.</p>
+              </div>
+              <div>
+                <h3>Is Toon Tone Game free?</h3>
+                <p>Yes. Toon Tone Game is free to play in your browser with no download required.</p>
+              </div>
+              <div>
+                <h3>Is this the same as ToonTone?</h3>
+                <p>No. This is an original toon color memory game from Bitesize Arcade. It uses original cartoon-style characters and does not use real cartoon, anime, game, or brand characters.</p>
+              </div>
+              <div>
+                <h3>How do you play a toon tone color game?</h3>
+                <p>Study the character, watch which part gets hidden, adjust hue, saturation, and brightness, then lock your color to compare your guess with the target shade.</p>
+              </div>
+              <div>
+                <h3>Can I play Toon Tone Game on mobile?</h3>
+                <p>Yes. The game is mobile friendly and designed for short rounds on both mobile and desktop browsers.</p>
+              </div>
+              <div>
+                <h3>Does Toon Tone Game use real cartoon characters?</h3>
+                <p>No. Every character is an original SVG character generated for this game, with no real cartoon, anime, game, movie, or brand characters.</p>
+              </div>
+              <div>
+                <h3>How is the color score calculated?</h3>
+                <p>Each guess is compared with the target shade using perceptual color distance. The closer your toon tone match, the higher your round score.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="site-section">
+            <div class="section-head">
+              <p class="site-kicker">Keep Playing</p>
+              <h2>Related Games and Categories</h2>
+            </div>
+            <div class="toon-related-grid">
+              <a class="game-card" href="../fruit-swap/">
+                <img src="../assets/games/fruit-swap/cover.png" alt="Fruit Swap game" />
+                <span class="game-card-meta">Match 3 · Puzzle · Fruit</span>
+                <h3>Fruit Swap</h3>
+                <p>Swap fruit tiles and collect goals through quick puzzle levels.</p>
+              </a>
+              <a class="game-card" href="../food-link/">
+                <img src="../assets/games/food-link/cover.png" alt="Food Link game" />
+                <span class="game-card-meta">Matching · Puzzle · Food</span>
+                <h3>Food Link</h3>
+                <p>Connect matching dishes through open paths before time runs out.</p>
+              </a>
+              <a class="game-card" href="../games/">
+                <img src="../assets/social/share-cover.jpg" alt="Bitesize Arcade game library" />
+                <span class="game-card-meta">Free · Browser · Mobile</span>
+                <h3>All Games</h3>
+                <p>Browse every quick browser game in the Bitesize Arcade library.</p>
+              </a>
+            </div>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <section id="toon-share-fallback" class="share-fallback-dialog" aria-hidden="true" hidden role="dialog" aria-modal="true" aria-labelledby="toon-share-title">
+      <div class="share-fallback-card">
+        <h2 id="toon-share-title">Copy Result</h2>
+        <p>Your browser blocked automatic copy. Select the text below to copy it manually.</p>
+        <textarea id="toon-share-text" readonly rows="4"></textarea>
+        <button id="toon-share-close" type="button">Close</button>
+      </div>
+    </section>
+
+    <footer class="site-footer">
+      <span>© 2026 Bitesize Arcade</span>
+      <a href="../about/">About</a>
+      <a href="../contact/">Contact</a>
+      <a href="../docs/privacy.html">Privacy Policy</a>
+      <a href="../docs/terms.html">Terms</a>
+    </footer>
+
+    <script src="./game.js?v=20260518toon"></script>
+  </body>
+</html>
